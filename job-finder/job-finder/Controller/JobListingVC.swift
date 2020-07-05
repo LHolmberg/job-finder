@@ -1,5 +1,6 @@
 import UIKit
 import MapKit
+import Firebase
 
 class JobListingVC: UIViewController {
     
@@ -9,6 +10,7 @@ class JobListingVC: UIViewController {
     var jobSalary = String()
     var jobPoster = String()
     var jobDescription = String()
+    var jobID = Int()
     
     let mainView = UIView()
     let mapView = MKMapView()
@@ -130,10 +132,22 @@ class JobListingVC: UIViewController {
         
         let applyBtn = UIButton()
         applyBtn.setTitle("Apply", for: .normal)
+        applyBtn.addTarget(self, action: #selector(ApplyToJob), for: .touchUpInside)
         applyBtn.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         applyBtn.layer.cornerRadius = 10
         mainView.addSubview(applyBtn)
         applyBtn.Anchor(top: nil, bottom: mainView.bottomAnchor, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, size: .init(width: 0, height: 55))
+    }
+    
+    @objc func ApplyToJob() {
+        DataHandeler.instance.GetPostedJobs { jobs, success in
+            if success {
+                let hashID = (Array(jobs)[self.jobID]).key as! String
+                DataHandeler.instance.REF_BASE.child("postedJobs").child(hashID).child("applicants")
+                    .updateChildValues(["email": Auth.auth().currentUser!.email!])
+                self.view.removeFromSuperview()
+            }
+        }
     }
     
     @objc func Dismiss(_ button: UIButton) {

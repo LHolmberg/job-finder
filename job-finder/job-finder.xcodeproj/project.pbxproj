@@ -21,11 +21,13 @@
 		81469EF024AA09E000470B39 /* job_finderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81469EEF24AA09E000470B39 /* job_finderTests.swift */; };
 		81469F0124AA367B00470B39 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81469F0024AA367B00470B39 /* UIView.swift */; };
 		81469F0324AA864400470B39 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81469F0224AA864400470B39 /* GradientView.swift */; };
-		81A1F35824B1C7CA0080AF34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81A1F35724B1C7C90080AF34 /* GoogleService-Info.plist */; };
 		81A1F35A24B202150080AF34 /* PostedJobsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F35924B202150080AF34 /* PostedJobsVC.swift */; };
 		81A1F35C24B205380080AF34 /* NavigationBarSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F35B24B205380080AF34 /* NavigationBarSetup.swift */; };
 		81A1F35E24B238310080AF34 /* EditJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F35D24B238310080AF34 /* EditJobVC.swift */; };
 		81A1F36024B24C740080AF34 /* VerticalAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F35F24B24C740080AF34 /* VerticalAlignedLabel.swift */; };
+		81A1F36224B288B10080AF34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81A1F36124B288B10080AF34 /* GoogleService-Info.plist */; };
+		81A1F36424B2938A0080AF34 /* ShowApplicantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F36324B2938A0080AF34 /* ShowApplicantsVC.swift */; };
+		81A1F36624B297AE0080AF34 /* ApplicantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F36524B297AE0080AF34 /* ApplicantCell.swift */; };
 		81C6ED6D24AF41F30023DCED /* CreateJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ED6C24AF41F30023DCED /* CreateJobVC.swift */; };
 		81E316DB24ACEFCC00BEC976 /* DataHandeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E316DA24ACEFCC00BEC976 /* DataHandeler.swift */; };
 		81E316DD24ACF0A700BEC976 /* AccountHandeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E316DC24ACF0A700BEC976 /* AccountHandeler.swift */; };
@@ -65,11 +67,13 @@
 		81469EF124AA09E000470B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81469F0024AA367B00470B39 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		81469F0224AA864400470B39 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		81A1F35724B1C7C90080AF34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81A1F35924B202150080AF34 /* PostedJobsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedJobsVC.swift; sourceTree = "<group>"; };
 		81A1F35B24B205380080AF34 /* NavigationBarSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSetup.swift; sourceTree = "<group>"; };
 		81A1F35D24B238310080AF34 /* EditJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJobVC.swift; sourceTree = "<group>"; };
 		81A1F35F24B24C740080AF34 /* VerticalAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlignedLabel.swift; sourceTree = "<group>"; };
+		81A1F36124B288B10080AF34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		81A1F36324B2938A0080AF34 /* ShowApplicantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowApplicantsVC.swift; sourceTree = "<group>"; };
+		81A1F36524B297AE0080AF34 /* ApplicantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantCell.swift; sourceTree = "<group>"; };
 		81C6ED6C24AF41F30023DCED /* CreateJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJobVC.swift; sourceTree = "<group>"; };
 		81E316DA24ACEFCC00BEC976 /* DataHandeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandeler.swift; sourceTree = "<group>"; };
 		81E316DC24ACF0A700BEC976 /* AccountHandeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHandeler.swift; sourceTree = "<group>"; };
@@ -134,7 +138,7 @@
 		81469ED424AA09DB00470B39 /* job-finder */ = {
 			isa = PBXGroup;
 			children = (
-				81A1F35724B1C7C90080AF34 /* GoogleService-Info.plist */,
+				81A1F36124B288B10080AF34 /* GoogleService-Info.plist */,
 				81469EFF24AA366900470B39 /* Extension */,
 				81469EFE24AA1D5800470B39 /* Model */,
 				81469EFD24AA1D5100470B39 /* View */,
@@ -169,6 +173,7 @@
 				81C6ED6C24AF41F30023DCED /* CreateJobVC.swift */,
 				81A1F35924B202150080AF34 /* PostedJobsVC.swift */,
 				81A1F35D24B238310080AF34 /* EditJobVC.swift */,
+				81A1F36324B2938A0080AF34 /* ShowApplicantsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				81139A6E24AB45980085CF34 /* JobCell.swift */,
 				81E316DA24ACEFCC00BEC976 /* DataHandeler.swift */,
 				81E316DC24ACF0A700BEC976 /* AccountHandeler.swift */,
+				81A1F36524B297AE0080AF34 /* ApplicantCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81469EE524AA09E000470B39 /* LaunchScreen.storyboard in Resources */,
-				81A1F35824B1C7CA0080AF34 /* GoogleService-Info.plist in Resources */,
+				81A1F36224B288B10080AF34 /* GoogleService-Info.plist in Resources */,
 				81469EE224AA09E000470B39 /* Assets.xcassets in Resources */,
 				81469EDD24AA09DB00470B39 /* Main.storyboard in Resources */,
 			);
@@ -384,6 +390,7 @@
 				81469EE024AA09DB00470B39 /* job_finder.xcdatamodeld in Sources */,
 				81A1F35A24B202150080AF34 /* PostedJobsVC.swift in Sources */,
 				81A1F35E24B238310080AF34 /* EditJobVC.swift in Sources */,
+				81A1F36424B2938A0080AF34 /* ShowApplicantsVC.swift in Sources */,
 				81A1F36024B24C740080AF34 /* VerticalAlignedLabel.swift in Sources */,
 				81E316DD24ACF0A700BEC976 /* AccountHandeler.swift in Sources */,
 				81469ED624AA09DB00470B39 /* AppDelegate.swift in Sources */,
@@ -392,6 +399,7 @@
 				81E316DF24AD367900BEC976 /* SignInVC.swift in Sources */,
 				81A1F35C24B205380080AF34 /* NavigationBarSetup.swift in Sources */,
 				81139A7124AB8A2F0085CF34 /* JobListingVC.swift in Sources */,
+				81A1F36624B297AE0080AF34 /* ApplicantCell.swift in Sources */,
 				81469F0124AA367B00470B39 /* UIView.swift in Sources */,
 				81469F0324AA864400470B39 /* GradientView.swift in Sources */,
 				81469ED824AA09DB00470B39 /* SceneDelegate.swift in Sources */,

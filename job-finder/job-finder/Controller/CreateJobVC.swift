@@ -23,6 +23,7 @@ class CreateJobVC: UIViewController {
     
     func Initialize() {
         self.postedJobsBtn.addTarget(self, action: #selector(PresentPostedJobsVC), for: .touchUpInside)
+        self.applicationsBtn.addTarget(self, action: #selector(PresentApplicantsVC), for: .touchUpInside)
     }
     
     @objc func PresentPostedJobsVC() {
@@ -30,6 +31,13 @@ class CreateJobVC: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)
     }
+    
+    @objc func PresentApplicantsVC() {
+        let vc = ShowApplicantsVC()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false, completion: nil)
+    }
+
   
     func SetupBody() {
         let viewTitleLbl = UILabel()

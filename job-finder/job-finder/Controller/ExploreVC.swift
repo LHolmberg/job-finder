@@ -157,6 +157,7 @@ extension ExploreVC: UICollectionViewDelegate {
         popover.jobDescription = data["description"] as! String
         popover.jobSalary = data["salary"] as! String
         popover.jobPoster = data["jobPoster"] as! String
+        popover.jobID = indexPath.row
         
         self.addChild(popover)
         popover.view.frame = self.view.frame

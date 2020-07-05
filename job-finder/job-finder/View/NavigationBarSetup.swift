@@ -34,7 +34,7 @@ class NavigationBarSetup {
         } else if currentVC == "PostedJobsVC" {
             selectedView.Anchor(top: postedJobsBtn.bottomAnchor, bottom: nil, leading: postedJobsBtn.leadingAnchor, trailing: nil, padding: .init(top: 4, left: 182, bottom: 0, right: 0), size: .init(width: 50, height: 2))
         } else {
-            selectedView.Anchor(top: postedJobsBtn.bottomAnchor, bottom: nil, leading: postedJobsBtn.leadingAnchor, trailing: nil, padding: .init(top: 4, left: 182 + 46.5, bottom: 0, right: 0), size: .init(width: 50, height: 2))
+            selectedView.Anchor(top: postedJobsBtn.bottomAnchor, bottom: nil, leading: postedJobsBtn.leadingAnchor, trailing: nil, padding: .init(top: 4, left: view.frame.width - 100, bottom: 0, right: 0), size: .init(width: 50, height: 2))
         }
     }
 }

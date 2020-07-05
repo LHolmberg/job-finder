@@ -1,19 +1,19 @@
 import UIKit
 import Firebase
 
-class PostedJobsVC: UIViewController {
+class ShowApplicantsVC: UIViewController {
     let postedJobsBtn = UIButton(type: .custom) as UIButton
     let applicationsBtn = UIButton(type: .custom) as UIButton
     let createJobBtn = UIButton(type: .custom) as UIButton
     let navbar = GradientView()
     
-    var myPostedJobs: NSMutableDictionary = NSMutableDictionary()
-    var postedJobsCV: UICollectionView? = nil
+    var applicants: NSMutableDictionary = NSMutableDictionary()
+    var applicantsCV: UICollectionView? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        NavigationBarSetup.instance.SetupNavbar(view: view, navbar: navbar, postedJobsBtn: postedJobsBtn, createJobBtn: createJobBtn, applicationsBtn: applicationsBtn, currentVC: "PostedJobsVC")
+        NavigationBarSetup.instance.SetupNavbar(view: view, navbar: navbar, postedJobsBtn: postedJobsBtn, createJobBtn: createJobBtn, applicationsBtn: applicationsBtn, currentVC: "ShowApplicantsVC")
         Initialize()
         SetupBody()
         SetMyPostedJobs()
@@ -22,7 +22,7 @@ class PostedJobsVC: UIViewController {
     
     func Initialize() {
         createJobBtn.addTarget(self, action: #selector(PresentCreateJobVC), for: .touchUpInside)
-        applicationsBtn.addTarget(self, action: #selector(PresentApplicantsVC), for: .touchUpInside)
+        postedJobsBtn.addTarget(self, action: #selector(PresentPostedJobsVC), for: .touchUpInside)
     }
     
     @objc func PresentCreateJobVC() {
@@ -31,23 +31,24 @@ class PostedJobsVC: UIViewController {
         self.present(vc, animated: false, completion: nil)
     }
     
-    @objc func PresentApplicantsVC() {
-        let vc = ShowApplicantsVC()
+    @objc func PresentPostedJobsVC() {
+        let vc = PostedJobsVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)
     }
     
     func SetMyPostedJobs() {
-        myPostedJobs = [:]
+        applicants = [:]
         DataHandeler.instance.REF_BASE.child("postedJobs").observeSingleEvent(of: .value) { (snapshot) in
             if let snap = snapshot.value as? NSMutableDictionary {
                 for i in snap {
                     let data = i.value as! [String: Any]
                     if data["jobPoster"] as! String == Auth.auth().currentUser!.email! {
-                        self.myPostedJobs[self.myPostedJobs.count] = data
+                        let apps = data["applicants"] as! [String: Any]
+                        self.applicants[self.applicants.count] = apps
                     }
                 }
-                self.postedJobsCV!.reloadData()
+                self.applicantsCV!.reloadData()
             } else {
                 print("Error parsing data")
             }
@@ -56,7 +57,7 @@ class PostedJobsVC: UIViewController {
     
     func SetupBody() {
         let viewTitleLbl = UILabel()
-        viewTitleLbl.text = "My Posted Jobs"
+        viewTitleLbl.text = "Applicants"
         viewTitleLbl.font = UIFont(name: "Avenir-Medium", size: 20)
         viewTitleLbl.textAlignment = .center
         viewTitleLbl.textColor = .black
@@ -67,13 +68,13 @@ class PostedJobsVC: UIViewController {
     func SetupCollectionView() { // All of the users posted jobs
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: self.view.frame.width / 1.2, height: 130)
+        layout.itemSize = CGSize(width: self.view.frame.width / 1.2, height: 65)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
 
-        postedJobsCV = UICollectionView(frame: CGRect(x: 0, y: 180, width: view.frame.width, height: self.view.frame.height - 180), collectionViewLayout: layout)
-        if let postedJobsCV = postedJobsCV {
-            postedJobsCV.register(JobCell.self, forCellWithReuseIdentifier: "MyCell")
+        applicantsCV = UICollectionView(frame: CGRect(x: 0, y: 180, width: view.frame.width, height: self.view.frame.height - 180), collectionViewLayout: layout)
+        if let postedJobsCV = applicantsCV {
+            postedJobsCV.register(ApplicantCell.self, forCellWithReuseIdentifier: "ApplCell")
             postedJobsCV.isPagingEnabled = true
             postedJobsCV.backgroundColor = UIColor.white
             postedJobsCV.dataSource = self
@@ -82,20 +83,23 @@ class PostedJobsVC: UIViewController {
             view.addSubview(postedJobsCV)
         }
     }
+    
+    @objc func ShowUserInfo() {
+        print("Hello")
+    }
 }
 
-extension PostedJobsVC: UICollectionViewDataSource {
+extension ShowApplicantsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myPostedJobs.count
+        return applicants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! JobCell
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ApplCell", for: indexPath) as! ApplicantCell
         
-        let data = Array(myPostedJobs)[indexPath.row].value as! [String: Any]
-        myCell.jobTitle.text = data["title"] as! String
-        myCell.jobLocation.text = (data["location"] as! [String: Any])["literal"] as! String
-        myCell.jobHourlyRate.text = (data["salary"] as! String) + " $/hr"
+        let data = Array(applicants)[indexPath.row].value as! [String: Any]
+        myCell.applicantEmail.text = data["email"] as! String
+        myCell.applicantInfo.addTarget(self, action: #selector(ShowUserInfo), for: .touchUpInside)
         
         myCell.backgroundColor = #colorLiteral(red: 0.912365973, green: 0.9125189185, blue: 0.9123458266, alpha: 1)
         myCell.layer.cornerRadius = 10
@@ -104,10 +108,10 @@ extension PostedJobsVC: UICollectionViewDataSource {
     }
 }
 
-extension PostedJobsVC: UICollectionViewDelegate {
+extension ShowApplicantsVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! JobCell
-        let data = Array(myPostedJobs)[indexPath.row].value as! [String: Any]
+        let data = Array(applicants)[indexPath.row].value as! [String: Any]
         
         let popover = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "editJob") as! EditJobVC
         popover.jobTitle = selectedCell.jobTitle.text!
