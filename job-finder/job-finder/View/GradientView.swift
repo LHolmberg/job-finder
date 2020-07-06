@@ -4,7 +4,7 @@ class GradientView: UIView {
     
     private var gradientLayer: CAGradientLayer!
     
-    var topColor: UIColor = #colorLiteral(red: 0.9959616065, green: 0.2667768896, blue: 0, alpha: 1)
+    var topColor: UIColor = #colorLiteral(red: 0.9959616065, green: 0.3564332335, blue: 0.01078451756, alpha: 1)
     var bottomColor: UIColor = #colorLiteral(red: 1, green: 0, blue: 0.2008001506, alpha: 1)
     
     var shadowColor: UIColor = .clear

@@ -54,39 +54,45 @@ class ExploreVC: UIViewController {
         view.addSubview(bodyTitleLbl)
         bodyTitleLbl.Anchor(top: navbar.bottomAnchor, bottom: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, padding: .init(top: 20, left: 15, bottom: 0, right: 0))
         
+        
+        let expertiseBtnAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Avenir-Medium", size: 22),
+            .foregroundColor: UIColor.white,
+        ]
+        
         let landscapingBtn = UIButton()
-        landscapingBtn.setTitle("Landscaping", for: .normal)
+        landscapingBtn.setAttributedTitle(NSAttributedString(string: "Landscaping", attributes: expertiseBtnAttributes), for: .normal)
         landscapingBtn.backgroundColor = .gray
         landscapingBtn.layer.cornerRadius = 5
         view.addSubview(landscapingBtn)
         landscapingBtn.Anchor(top: nil, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: -90, right: 0),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
-        let btn2 = UIButton()
-        btn2.setTitle("Landscaping", for: .normal)
-             btn2.backgroundColor = .gray
-        btn2.layer.cornerRadius = 5
-             view.addSubview(btn2)
-        btn2.Anchor(top: nil, bottom: view.bottomAnchor, leading: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -90, right: -15),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
+        let otherBtn = UIButton()
+        otherBtn.setAttributedTitle(NSAttributedString(string: "Other", attributes: expertiseBtnAttributes), for: .normal)
+        otherBtn.backgroundColor = .gray
+        otherBtn.layer.cornerRadius = 5
+        view.addSubview(otherBtn)
+        otherBtn.Anchor(top: nil, bottom: view.bottomAnchor, leading: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -90, right: -15),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
-        let electricityBtn = UIButton()
-        electricityBtn.setTitle("Electricity", for: .normal)
-        electricityBtn.backgroundColor = .gray
-        electricityBtn.layer.cornerRadius = 5
-        view.addSubview(electricityBtn)
-        electricityBtn.Anchor(top: nil, bottom: landscapingBtn.topAnchor, leading: view.leadingAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: -30, right: 0),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
+        let plumbingBtn = UIButton()
+        plumbingBtn.setAttributedTitle(NSAttributedString(string: "Plumbing", attributes: expertiseBtnAttributes), for: .normal)
+        plumbingBtn.backgroundColor = .gray
+        plumbingBtn.layer.cornerRadius = 5
+        view.addSubview(plumbingBtn)
+        plumbingBtn.Anchor(top: nil, bottom: landscapingBtn.topAnchor, leading: view.leadingAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: -30, right: 0),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
-        let btn4 = UIButton()
-        btn4.setTitle("Landscaping", for: .normal)
-             btn4.backgroundColor = .gray
-        btn4.layer.cornerRadius = 5
-             view.addSubview(btn4)
-        btn4.Anchor(top: nil, bottom: btn2.topAnchor, leading: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -30, right: -15),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
+        let woodworkingBtn = UIButton()
+        woodworkingBtn.setAttributedTitle(NSAttributedString(string: "Woodworking", attributes: expertiseBtnAttributes), for: .normal)
+        woodworkingBtn.backgroundColor = .gray
+        woodworkingBtn.layer.cornerRadius = 5
+        view.addSubview(woodworkingBtn)
+        woodworkingBtn.Anchor(top: nil, bottom: otherBtn.topAnchor, leading: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -30, right: -15),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
         let infoLbl = UILabel()
         infoLbl.font = UIFont(name: "Avenir-Medium", size: 17)
         infoLbl.text = "Explore Jobs Within Your Expertise"
         view.addSubview(infoLbl)
-        infoLbl.Anchor(top: nil, bottom: electricityBtn.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 15, bottom: -15, right: 0))
+        infoLbl.Anchor(top: nil, bottom: plumbingBtn.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 15, bottom: -15, right: 0))
         
         let signOutBtn = UIButton()
         signOutBtn.addTarget(self, action: #selector(SignOut), for: .touchUpInside)
