@@ -113,6 +113,21 @@
             </objects>
             <point key="canvasLocation" x="2899" y="83"/>
         </scene>
+        <!--User InfoVC-->
+        <scene sceneID="YUt-Hl-GOY">
+            <objects>
+                <viewController storyboardIdentifier="userInfo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="V7V-gr-jZz" customClass="UserInfoVC" customModule="job_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rVd-Ve-u0p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Haz-RD-vEk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgN-y5-XR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3612" y="756"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="S4I-9x-sPG">
             <objects>

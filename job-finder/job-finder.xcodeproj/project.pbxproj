@@ -29,6 +29,7 @@
 		81A1F36424B2938A0080AF34 /* ShowApplicantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F36324B2938A0080AF34 /* ShowApplicantsVC.swift */; };
 		81A1F36624B297AE0080AF34 /* ApplicantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1F36524B297AE0080AF34 /* ApplicantCell.swift */; };
 		81C6ED6D24AF41F30023DCED /* CreateJobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6ED6C24AF41F30023DCED /* CreateJobVC.swift */; };
+		81C7970624B3615C00C5FB5B /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7970524B3615C00C5FB5B /* UserInfoVC.swift */; };
 		81E316DB24ACEFCC00BEC976 /* DataHandeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E316DA24ACEFCC00BEC976 /* DataHandeler.swift */; };
 		81E316DD24ACF0A700BEC976 /* AccountHandeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E316DC24ACF0A700BEC976 /* AccountHandeler.swift */; };
 		81E316DF24AD367900BEC976 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E316DE24AD367900BEC976 /* SignInVC.swift */; };
@@ -75,6 +76,7 @@
 		81A1F36324B2938A0080AF34 /* ShowApplicantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowApplicantsVC.swift; sourceTree = "<group>"; };
 		81A1F36524B297AE0080AF34 /* ApplicantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantCell.swift; sourceTree = "<group>"; };
 		81C6ED6C24AF41F30023DCED /* CreateJobVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJobVC.swift; sourceTree = "<group>"; };
+		81C7970524B3615C00C5FB5B /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		81E316DA24ACEFCC00BEC976 /* DataHandeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandeler.swift; sourceTree = "<group>"; };
 		81E316DC24ACF0A700BEC976 /* AccountHandeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHandeler.swift; sourceTree = "<group>"; };
 		81E316DE24AD367900BEC976 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				81A1F35924B202150080AF34 /* PostedJobsVC.swift */,
 				81A1F35D24B238310080AF34 /* EditJobVC.swift */,
 				81A1F36324B2938A0080AF34 /* ShowApplicantsVC.swift */,
+				81C7970524B3615C00C5FB5B /* UserInfoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				81469ED624AA09DB00470B39 /* AppDelegate.swift in Sources */,
 				81E316E124AD368100BEC976 /* SignUpVC.swift in Sources */,
 				81C6ED6D24AF41F30023DCED /* CreateJobVC.swift in Sources */,
+				81C7970624B3615C00C5FB5B /* UserInfoVC.swift in Sources */,
 				81E316DF24AD367900BEC976 /* SignInVC.swift in Sources */,
 				81A1F35C24B205380080AF34 /* NavigationBarSetup.swift in Sources */,
 				81139A7124AB8A2F0085CF34 /* JobListingVC.swift in Sources */,

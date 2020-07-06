@@ -143,7 +143,7 @@ class JobListingVC: UIViewController {
         DataHandeler.instance.GetPostedJobs { jobs, success in
             if success {
                 let hashID = (Array(jobs)[self.jobID]).key as! String
-                DataHandeler.instance.REF_BASE.child("postedJobs").child(hashID).child("applicants")
+                DataHandeler.instance.REF_BASE.child("postedJobs").child(hashID).child("applicants").child(UUID().uuidString)
                     .updateChildValues(["email": Auth.auth().currentUser!.email!])
                 self.view.removeFromSuperview()
             }

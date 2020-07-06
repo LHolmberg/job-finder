@@ -61,7 +61,6 @@ class EditJobVC: UIViewController {
         mainView.addSubview(descriptionLbl)
         descriptionLbl.Anchor(top: salaryLbl.bottomAnchor, bottom: nil, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, padding: .init(top: 20, left: 20, bottom: 0, right: -20), size: .init(width: 0, height: 200))
         descriptionLbl.sizeToFit()
-        
     }
     
     func SetupBody() {

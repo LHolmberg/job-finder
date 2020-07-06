@@ -65,6 +65,29 @@ class DataHandeler {
         }
     }
     
+    func RemoveApplication(email: String, jobTitle: String) {
+        GetPostedJobs { (jobs, _) in
+            let a = self.REF_BASE.child("postedJobs")
+            a.observeSingleEvent(of: .value) { (snapshot) in
+                let dict = snapshot.value as! [String: Any]
+                for i in dict {
+                    let n = i.value as! [String: Any]
+                    if let j = n["applicants"] as? [String: Any] {
+                        for k in j {
+                            if (k.value as! [String: Any])["email"] as! String == email && n["title"] as! String == jobTitle {
+                                for i in jobs {
+                                    snapshot.childSnapshot(forPath: i.key as! String).childSnapshot(forPath: "applicants")
+                                        .childSnapshot(forPath: k.key).ref.removeValue()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+       
+    
     func GetJsonData(url: URL, completion: @escaping ([String: Any]) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, res, err) in
            if let d = data {

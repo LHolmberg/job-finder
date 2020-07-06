@@ -67,7 +67,7 @@ class PostedJobsVC: UIViewController {
     func SetupCollectionView() { // All of the users posted jobs
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: self.view.frame.width / 1.2, height: 130)
+        layout.itemSize = CGSize(width: self.view.frame.width / 1.5, height: 130)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
 
