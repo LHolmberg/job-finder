@@ -3,19 +3,22 @@ import UIKit
 class JobCell: UICollectionViewCell {
     var jobTitle: UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont(name: "Avenir", size: 20)
+        lbl.font = UIFont(name: "Avenir-Medium", size: 16)
+        lbl.textColor = .white
         return lbl
     }()
-    
+
     var jobLocation: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont(name: "Avenir", size: 15)
+        lbl.textColor = .white
         return lbl
     }()
     
     var jobHourlyRate: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont(name: "Avenir", size: 15)
+        lbl.textColor = .white
         return lbl
     }()
     
@@ -39,7 +42,6 @@ extension JobCell {
         jobTitle.textAlignment = .center
         
         jobLocation.Anchor(top: jobTitle.bottomAnchor, bottom: nil, leading: self.leadingAnchor, trailing: nil, padding: .init(top: 10, left: 10, bottom: 0, right: 0))
-        
         jobHourlyRate.Anchor(top: jobLocation.bottomAnchor, bottom: nil, leading: self.leadingAnchor, trailing: nil, padding: .init(top: 10, left: 10, bottom: 0, right: 0))
     }
 }

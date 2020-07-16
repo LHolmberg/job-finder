@@ -4,12 +4,14 @@ class ApplicantCell: UICollectionViewCell {
     var applicantEmail: VerticalAlignedLabel = {
         let lbl = VerticalAlignedLabel()
         lbl.font = UIFont(name: "Avenir", size: 17)
+        lbl.textColor = .white
         return lbl
     }()
     
     var applicantJob: VerticalAlignedLabel = {
         let lbl = VerticalAlignedLabel()
         lbl.font = UIFont(name: "Avenir", size: 17)
+        lbl.textColor = .white
         return lbl
     }()
     
@@ -38,10 +40,10 @@ extension ApplicantCell {
         self.addSubview(declineApplicant)
         self.addSubview(applicantJob)
         
-        applicantEmail.Anchor(top: self.topAnchor, bottom: nil, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: .init(top: 40, left: 10, bottom: 0, right: 0))
-        applicantJob.Anchor(top: applicantInfo.bottomAnchor, bottom: nil, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: .init(top: 20, left: 10, bottom: 0, right: 0))
-        applicantInfo.Anchor(top: self.topAnchor, bottom: nil, leading: nil, trailing: self.trailingAnchor, padding: .init(top: 18, left: 0, bottom: 0, right: -5), size: .init(width: 30, height: 30))
-        acceptApplicant.Anchor(top: applicantInfo.bottomAnchor, bottom: nil, leading: nil, trailing: self.trailingAnchor, padding: .init(top: 5, left: 0, bottom: 0, right: -5), size: .init(width: 30, height: 30))
-        declineApplicant.Anchor(top: acceptApplicant.bottomAnchor, bottom: nil, leading: nil, trailing: self.trailingAnchor, padding: .init(top: 5, left: 0, bottom: 0, right: -5), size: .init(width: 30, height: 30))
+        applicantEmail.Anchor(top: self.topAnchor, bottom: nil, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: .init(top: 38, left: 10, bottom: 0, right: 0))
+        applicantJob.Anchor(top: applicantInfo.bottomAnchor, bottom: nil, leading: self.leadingAnchor, trailing: self.trailingAnchor, padding: .init(top: 26, left: 10, bottom: 0, right: 0))
+        applicantInfo.Anchor(top: self.topAnchor, bottom: nil, leading: nil, trailing: self.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: -5), size: .init(width: 30, height: 30))
+        acceptApplicant.Anchor(top: applicantInfo.bottomAnchor, bottom: nil, leading: nil, trailing: self.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: -5), size: .init(width: 30, height: 30))
+        declineApplicant.Anchor(top: acceptApplicant.bottomAnchor, bottom: nil, leading: nil, trailing: self.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: -5), size: .init(width: 30, height: 30))
     }
 }

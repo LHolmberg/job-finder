@@ -8,7 +8,11 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0, green: 0.7298330069, blue: 0.652797401, alpha: 1)
+        let gradientView = GradientView()
+        gradientView.bottomColor = #colorLiteral(red: 0.2246764898, green: 0.3621136546, blue: 0.5893768668, alpha: 1)
+        gradientView.topColor = #colorLiteral(red: 0.2088427842, green: 0.275624752, blue: 0.4520844817, alpha: 1)
+        view = gradientView
+        
         SetupBody()
     }
     

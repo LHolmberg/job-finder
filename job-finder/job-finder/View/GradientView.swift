@@ -2,10 +2,10 @@ import UIKit
 
 class GradientView: UIView {
     
-    private var gradientLayer: CAGradientLayer!
+    public var gradientLayer: CAGradientLayer!
     
-    var topColor: UIColor = #colorLiteral(red: 0.9959616065, green: 0.3564332335, blue: 0.01078451756, alpha: 1)
-    var bottomColor: UIColor = #colorLiteral(red: 1, green: 0, blue: 0.2008001506, alpha: 1)
+    var topColor: UIColor = #colorLiteral(red: 0.2099078894, green: 0.5850914121, blue: 0.8388919234, alpha: 1)
+    var bottomColor: UIColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
     
     var shadowColor: UIColor = .clear
     var shadowX: CGFloat = 0

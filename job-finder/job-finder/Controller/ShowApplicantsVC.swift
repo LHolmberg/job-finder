@@ -156,8 +156,11 @@ extension ShowApplicantsVC: UICollectionViewDataSource {
         myCell.acceptApplicant.addTarget(self, action: #selector(AcceptApplicant(_ :)), for: .touchUpInside)
         myCell.declineApplicant.addTarget(self, action: #selector(DeclineApplicant(_ :)), for: .touchUpInside)
 
-        myCell.backgroundColor = #colorLiteral(red: 0.912365973, green: 0.9125189185, blue: 0.9123458266, alpha: 1)
-        myCell.layer.cornerRadius = 10
+        let gradientView = GradientView()
+        gradientView.topColor =  #colorLiteral(red: 0.04548885673, green: 0.1401814222, blue: 0.1931747198, alpha: 1)
+        gradientView.bottomColor = #colorLiteral(red: 0.07231562585, green: 0.1956573427, blue: 0.2803950608, alpha: 1)
+        myCell.backgroundView = gradientView
+        myCell.backgroundView!.layer.cornerRadius = 10
 
         return myCell
     }

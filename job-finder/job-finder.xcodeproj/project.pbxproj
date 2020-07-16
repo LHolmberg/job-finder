@@ -11,6 +11,7 @@
 		67CAEC564D8E02658DF0F3DB /* Pods_job_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79B18C0584BD013AA02A051 /* Pods_job_finder.framework */; };
 		81139A6F24AB45980085CF34 /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81139A6E24AB45980085CF34 /* JobCell.swift */; };
 		81139A7124AB8A2F0085CF34 /* JobListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81139A7024AB8A2F0085CF34 /* JobListingVC.swift */; };
+		8126AD4724C0DDFF00CF7CA5 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126AD4624C0DDFF00CF7CA5 /* GradientButton.swift */; };
 		81469ED624AA09DB00470B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81469ED524AA09DB00470B39 /* AppDelegate.swift */; };
 		81469ED824AA09DB00470B39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81469ED724AA09DB00470B39 /* SceneDelegate.swift */; };
 		81469EDA24AA09DB00470B39 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81469ED924AA09DB00470B39 /* ExploreVC.swift */; };
@@ -54,6 +55,7 @@
 		6FDBB1BBA37B35C47B6A7227 /* Pods_job_finderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_job_finderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81139A6E24AB45980085CF34 /* JobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		81139A7024AB8A2F0085CF34 /* JobListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListingVC.swift; sourceTree = "<group>"; };
+		8126AD4624C0DDFF00CF7CA5 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		81469ED224AA09DB00470B39 /* job-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "job-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81469ED524AA09DB00470B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81469ED724AA09DB00470B39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				81E316E224AD3C6700BEC976 /* TextFieldDesign.swift */,
 				81A1F35B24B205380080AF34 /* NavigationBarSetup.swift */,
 				81A1F35F24B24C740080AF34 /* VerticalAlignedLabel.swift */,
+				8126AD4624C0DDFF00CF7CA5 /* GradientButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				81A1F35A24B202150080AF34 /* PostedJobsVC.swift in Sources */,
 				81A1F35E24B238310080AF34 /* EditJobVC.swift in Sources */,
 				81A1F36424B2938A0080AF34 /* ShowApplicantsVC.swift in Sources */,
+				8126AD4724C0DDFF00CF7CA5 /* GradientButton.swift in Sources */,
 				81A1F36024B24C740080AF34 /* VerticalAlignedLabel.swift in Sources */,
 				81E316DD24ACF0A700BEC976 /* AccountHandeler.swift in Sources */,
 				81469ED624AA09DB00470B39 /* AppDelegate.swift in Sources */,

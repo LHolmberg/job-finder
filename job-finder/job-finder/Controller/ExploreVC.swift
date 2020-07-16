@@ -36,7 +36,7 @@ class ExploreVC: UIViewController {
         newJobs = [:]
         DataHandeler.instance.REF_BASE.child("postedJobs").observeSingleEvent(of: .value) { (snapshot) in
             if let snap = snapshot.value as? NSMutableDictionary {
-                for i in snap {
+                for i in snap.reversed() {
                     let data = i.value as! [String: Any]
                     self.newJobs[self.newJobs.count] = data
                 }
@@ -60,31 +60,37 @@ class ExploreVC: UIViewController {
             .foregroundColor: UIColor.white,
         ]
         
-        let landscapingBtn = UIButton()
+        let landscapingBtn = GradientButton()
         landscapingBtn.setAttributedTitle(NSAttributedString(string: "Landscaping", attributes: expertiseBtnAttributes), for: .normal)
-        landscapingBtn.backgroundColor = .gray
-        landscapingBtn.layer.cornerRadius = 5
+        landscapingBtn.setGradient(topGradientColor: #colorLiteral(red: 0.04548885673, green: 0.1401814222, blue: 0.1931747198, alpha: 1), bottomGradientColor: #colorLiteral(red: 0.07231562585, green: 0.1956573427, blue: 0.2803950608, alpha: 1))
+        landscapingBtn.gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        landscapingBtn.gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
+        landscapingBtn.gradientLayer.cornerRadius = 5
         view.addSubview(landscapingBtn)
         landscapingBtn.Anchor(top: nil, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: -90, right: 0),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
-        let otherBtn = UIButton()
+        let otherBtn = GradientButton()
         otherBtn.setAttributedTitle(NSAttributedString(string: "Other", attributes: expertiseBtnAttributes), for: .normal)
-        otherBtn.backgroundColor = .gray
-        otherBtn.layer.cornerRadius = 5
+        otherBtn.setGradient(topGradientColor: #colorLiteral(red: 0.04548885673, green: 0.1401814222, blue: 0.1931747198, alpha: 1), bottomGradientColor: #colorLiteral(red: 0.07231562585, green: 0.1956573427, blue: 0.2803950608, alpha: 1))
+        otherBtn.gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
+        otherBtn.gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
+        otherBtn.gradientLayer.cornerRadius = 5
         view.addSubview(otherBtn)
         otherBtn.Anchor(top: nil, bottom: view.bottomAnchor, leading: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -90, right: -15),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
-        let plumbingBtn = UIButton()
+        let plumbingBtn = GradientButton()
         plumbingBtn.setAttributedTitle(NSAttributedString(string: "Plumbing", attributes: expertiseBtnAttributes), for: .normal)
-        plumbingBtn.backgroundColor = .gray
-        plumbingBtn.layer.cornerRadius = 5
+        plumbingBtn.setGradient(topGradientColor: #colorLiteral(red: 0.04548885673, green: 0.1401814222, blue: 0.1931747198, alpha: 1), bottomGradientColor: #colorLiteral(red: 0.07231562585, green: 0.1956573427, blue: 0.2803950608, alpha: 1))
+        plumbingBtn.gradientLayer.cornerRadius = 5
         view.addSubview(plumbingBtn)
         plumbingBtn.Anchor(top: nil, bottom: landscapingBtn.topAnchor, leading: view.leadingAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: -30, right: 0),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
-        let woodworkingBtn = UIButton()
+        let woodworkingBtn = GradientButton()
         woodworkingBtn.setAttributedTitle(NSAttributedString(string: "Woodworking", attributes: expertiseBtnAttributes), for: .normal)
-        woodworkingBtn.backgroundColor = .gray
-        woodworkingBtn.layer.cornerRadius = 5
+        woodworkingBtn.setGradient(topGradientColor: #colorLiteral(red: 0.04548885673, green: 0.1401814222, blue: 0.1931747198, alpha: 1), bottomGradientColor: #colorLiteral(red: 0.07231562585, green: 0.1956573427, blue: 0.2803950608, alpha: 1))
+        woodworkingBtn.gradientLayer.startPoint = CGPoint(x: 1.0, y: 0.0)
+        woodworkingBtn.gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
+        woodworkingBtn.gradientLayer.cornerRadius = 5
         view.addSubview(woodworkingBtn)
         woodworkingBtn.Anchor(top: nil, bottom: otherBtn.topAnchor, leading: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -30, right: -15),size: .init(width: self.view.frame.width / 2.3, height: self.view.frame.width / 2.1))
         
@@ -121,7 +127,7 @@ class ExploreVC: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 20
 
-        newJobsCV = UICollectionView(frame: CGRect(x: 0, y: 165, width: view.frame.width, height: 140), collectionViewLayout: layout)
+        newJobsCV = UICollectionView(frame: CGRect(x: 0, y: 165, width: view.frame.width, height: 155), collectionViewLayout: layout)
         if let newJobsCV = newJobsCV {
             newJobsCV.register(JobCell.self, forCellWithReuseIdentifier: "MyCell")
             newJobsCV.isPagingEnabled = true
@@ -145,8 +151,11 @@ extension ExploreVC: UICollectionViewDataSource {
         myCell.jobTitle.text = data["title"] as! String
         myCell.jobLocation.text = (data["location"] as! [String: Any])["literal"] as! String
         myCell.jobHourlyRate.text = data["salary"] as! String + " $/hr"
-        myCell.backgroundColor = #colorLiteral(red: 0.912365973, green: 0.9125189185, blue: 0.9123458266, alpha: 1)
-        myCell.layer.cornerRadius = 10
+        let gradientView = GradientView()
+        gradientView.topColor = #colorLiteral(red: 0.1994886398, green: 0.3264511526, blue: 0.531757772, alpha: 1)
+        gradientView.bottomColor = #colorLiteral(red: 0, green: 0.1348134577, blue: 0.2998089492, alpha: 1)
+        myCell.backgroundView = gradientView
+        myCell.backgroundView!.layer.cornerRadius = 10
         
         return myCell
     }

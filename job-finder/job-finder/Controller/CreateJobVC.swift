@@ -79,9 +79,9 @@ class CreateJobVC: UIViewController {
         view.addSubview(jobDescriptionTxt)
         jobDescriptionTxt.Anchor(top: jobSalaryTxt.bottomAnchor, bottom: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 30, bottom: -25, right: -30), size: .init(width: 0, height: 60))
         
-        let createJobBtn = UIButton()
-        createJobBtn.backgroundColor = .black
-        createJobBtn.layer.cornerRadius = 15
+        let createJobBtn = GradientButton()
+        createJobBtn.setGradient(topGradientColor: #colorLiteral(red: 0.1994886398, green: 0.3264511526, blue: 0.531757772, alpha: 1), bottomGradientColor: #colorLiteral(red: 0, green: 0.1348134577, blue: 0.2998089492, alpha: 1))
+        createJobBtn.gradientLayer.cornerRadius = 15
         createJobBtn.setTitle("Post Job", for: .normal)
         createJobBtn.addTarget(self, action: #selector(CreateJob), for: .touchUpInside)
         view.addSubview(createJobBtn)
@@ -146,5 +146,4 @@ class CreateJobVC: UIViewController {
             }
         }
     }
-    
 }

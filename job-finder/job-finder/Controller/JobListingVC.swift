@@ -31,8 +31,7 @@ class JobListingVC: UIViewController {
     
     func GetDistanceToJob() -> Double {
         let loc1 = CLLocation(latitude: Double(jobLatt)!, longitude: Double(jobLongt)!)
-        
-        return (locationManager.location?.distance(from: loc1))! / 1000
+        return (locationManager.location?.distance(from: loc1) ?? 0) / 1000
     }
     
     func ZoomToJobLocation() {
@@ -76,9 +75,9 @@ class JobListingVC: UIViewController {
         mainView.backgroundColor = .white
         view.addSubview(mainView)
         mainView.Anchor(top: self.view.topAnchor, bottom: self.view.bottomAnchor, leading: self.view.leadingAnchor, trailing: self.view.trailingAnchor, padding: .init(top: 100, left: 20, bottom: -100, right: -20))
-        
+        mapView.layer.cornerRadius = 10
         mainView.addSubview(mapView)
-        mapView.Anchor(top: mainView.topAnchor, bottom: mainView.bottomAnchor, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, padding: .init(top: 60, left: 0, bottom: -350, right: 0))
+        mapView.Anchor(top: mainView.topAnchor, bottom: mainView.bottomAnchor, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -350, right: 0))
         
         let dismissBtn = UIButton()
         dismissBtn.setTitle("X", for: .normal)
@@ -87,19 +86,13 @@ class JobListingVC: UIViewController {
         mainView.addSubview(dismissBtn)
         dismissBtn.Anchor(top: mainView.topAnchor, bottom: nil, leading: mainView.leadingAnchor, trailing: nil,padding: .init(top: 25, left: 20, bottom: 0, right: 0) , size: .init(width: 20, height: 20))
         
-        let titleLbl = UILabel()
-        titleLbl.text = jobTitle
-        titleLbl.font = UIFont(name: "Avenir-Medium", size: 20)
-        titleLbl.textAlignment = .center
-        mainView.addSubview(titleLbl)
-        titleLbl.Anchor(top: mainView.topAnchor, bottom: nil, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, padding: .init(top: 25, left: 0, bottom: 0, right: 0))
-        
     }
     
     func SetupBody() {
+        
         let infoLbl = UILabel()
-        infoLbl.font = UIFont(name: "Avenir", size: 20)
-        infoLbl.text = "Information About The Job"
+        infoLbl.font = UIFont(name: "Avenir-Medium", size: 20)
+        infoLbl.text = jobTitle
         infoLbl.textAlignment = .center
         mainView.addSubview(infoLbl)
         infoLbl.Anchor(top: mapView.bottomAnchor, bottom: nil, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0))
@@ -130,13 +123,13 @@ class JobListingVC: UIViewController {
         jobDescriptionLbl.Anchor(top: jobDistanceLbl.bottomAnchor, bottom: nil, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, padding: .init(top: 15, left: 20, bottom: 0, right: -20))
         
         
-        let applyBtn = UIButton()
+        let applyBtn = GradientButton()
         applyBtn.setTitle("Apply", for: .normal)
         applyBtn.addTarget(self, action: #selector(ApplyToJob), for: .touchUpInside)
-        applyBtn.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        applyBtn.layer.cornerRadius = 10
+        applyBtn.setGradient(topGradientColor: #colorLiteral(red: 0.1994886398, green: 0.3264511526, blue: 0.531757772, alpha: 1), bottomGradientColor: #colorLiteral(red: 0, green: 0.1348134577, blue: 0.2998089492, alpha: 1))
+        applyBtn.gradientLayer.cornerRadius = 10
         mainView.addSubview(applyBtn)
-        applyBtn.Anchor(top: nil, bottom: mainView.bottomAnchor, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, size: .init(width: 0, height: 55))
+        applyBtn.Anchor(top: nil, bottom: mainView.bottomAnchor, leading: mainView.leadingAnchor, trailing: mainView.trailingAnchor, size: .init(width: 0, height: 70))
     }
     
     @objc func ApplyToJob() {
@@ -153,5 +146,4 @@ class JobListingVC: UIViewController {
     @objc func Dismiss(_ button: UIButton) {
         self.view.removeFromSuperview()
     }
-
 }
